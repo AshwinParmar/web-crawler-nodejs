@@ -23,10 +23,10 @@ exports.websiteCrawler = function(domain) {
 			links: data.result.links,
 		});
 
-		process.stdout.write(`\r${crawler.countOfProcessedUrls} out of ${crawler.foundLinks.size}`);
+		process.stdout.write(`\n\r${crawler.countOfProcessedUrls} out of ${crawler.foundLinks.size}\n`);
 
 		if (/30\d/.test(data.result.statusCode) && data.result.links[0].url) siteTree.redirects[data.url] = data.result.links[0].url;
-		console.log([{'PageURL': data.url, 'HTTPStatus': data.result.statusCode}]);
+		console.table([{'PageURL': data.url, 'HTTPStatus': data.result.statusCode}]);
 	}); // some html-page a loaded
 
 	crawler.on('error', error => {
@@ -56,7 +56,8 @@ exports.websiteCrawler = function(domain) {
 	    });
 	  });
 
-	  console.log(`\r\nFinish! All ${crawler.foundLinks.size} links on pages on domain ${domain} a checked!`);
+	  //console.log(`\r\nAll Done${crawler.foundLinks.size} links on pages on domain ${domain} a checked!`);
+	  console.log("────────────────────────────────────── COMPLETED ───────────────────────────────────────────────────────────");
 
 	  delete siteTree;
 	}); // all pages found are crawled and loaded

@@ -1,2 +1,4 @@
+config.json
+sites.json
 result/*
 node_modules/*
