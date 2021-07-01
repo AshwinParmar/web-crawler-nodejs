@@ -1,0 +1,10 @@
+{
+  "protocol": "http:",
+  "domain": "DYNAMIC_DOMAIN",
+  "limitForConnections": "5",
+  "limitForRedirects": "5",
+  "timeout": "500",
+  "headers": {
+    "User-Agent": "Your-User-Agent/0.0.1"
+  }
+}
