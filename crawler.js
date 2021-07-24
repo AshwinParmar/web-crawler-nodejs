@@ -5,6 +5,7 @@ const CONFIG_JSON = require('./config.json');
 exports.websiteCrawler = function(domain) {
 
 	console.log("[ Running on " + domain + " ]");
+
 	CONFIG_JSON.domain = domain;
 	const crawler = new Crawler(CONFIG_JSON);
 	const siteTree = { pages: [], urls: {}, redirects: {} };

@@ -1,4 +1,6 @@
-config.json
-sites.json
 result/*
 node_modules/*
+
+# Files
+config.json
+sites.json
